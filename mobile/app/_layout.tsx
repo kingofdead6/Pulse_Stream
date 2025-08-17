@@ -1,16 +1,15 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';;
-import "../global.css"
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import "../global.css";
+import Hero from '@/components/Hero';
+import Lives from '@/components/Lives';
 
-
-export default function RootLayout() {
-  
-
-  return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-    
-      </Stack>
-    </ThemeProvider>
-  );
-}
+const Stack = createStackNavigator();
+const App = () => (
+  <NavigationContainer>
+    <Stack.Navigator>
+      <Stack.Screen name="Hero" component={Hero} />
+      <Stack.Screen name="Lives" component={Lives} />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
