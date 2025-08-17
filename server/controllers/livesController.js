@@ -1,16 +1,16 @@
-import Live from '../Models/Live.js';
+import Live from '../models/Live.js';
 import { parseYoutubeUrl } from '../utils/parseYoutubeUrl.js';
 
 export const addLive = async (req, res) => {
   try {
-    const { title, description, url, isLive, tags } = req.body;
+    const { title, url, isLive } = req.body;
 
     // Convert YouTube watch links -> embed links
     const embedUrl = parseYoutubeUrl(url);
 
     const live = await Live.create({
       title,
-      url: embedUrl, // store embed url
+      url: embedUrl, 
       isLive,
     });
 
