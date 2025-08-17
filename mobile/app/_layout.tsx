@@ -1,26 +1,19 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Stack } from "expo-router";
+import { useState } from "react";
+import AnimatedSplash from "./SplashScreen";
 import "../global.css";
-import Hero from '@/components/Hero';
-import Lives from '@/components/Lives';
-
-const Stack = createNativeStackNavigator();
 
 export default function RootLayout() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  if (showSplash) {
+    return <AnimatedSplash onFinish={() => setShowSplash(false)} />;
+  }
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Hero">
-        <Stack.Screen 
-          name="Hero" 
-          component={Hero} 
-          options={{ headerShown: false }} 
-        />
-        <Stack.Screen 
-          name="Lives" 
-          component={Lives} 
-          options={{ headerShown: false }} 
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    />
   );
 }
