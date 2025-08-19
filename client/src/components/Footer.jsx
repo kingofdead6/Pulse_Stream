@@ -1,4 +1,3 @@
-// src/components/Footer.jsx
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
@@ -16,6 +15,23 @@ const Footer = () => {
             Your gateway to live events, entertainment, and experiences around
             the world. Watch live or catch up on replays anytime.
           </p>
+
+          {/* Download App Section */}
+          {/* Download App Section */}
+<div className="mt-6">
+  <h3 className="text-lg font-semibold text-purple-300 mb-2">Get the App</h3>
+  <a
+    href="https://pulse-stream-file.vercel.app/PulseStream.apk"
+    download="PulseStream.apk" // forces download instead of opening
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+      alt="Download Pulse Stream"
+      className="h-12"
+    />
+  </a>
+</div>
+
         </div>
 
         {/* Empty spacer to balance layout */}
