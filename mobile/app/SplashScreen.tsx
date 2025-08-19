@@ -35,7 +35,7 @@ export default function AnimatedSplash({ onFinish }: { onFinish: () => void }) {
 
   return (
     <ImageBackground
-      source={require("../assets/Icon.png")}
+      source={require("../assets/icon.png")}
       style={styles.background}
       resizeMode="cover"
     >
@@ -62,7 +62,7 @@ export default function AnimatedSplash({ onFinish }: { onFinish: () => void }) {
               1: { scaleX: 1, scaleY: 1 },
             }}
             duration={1200}
-            source={require("../assets/Icon.png")}
+            source={require("../assets/icon.png")}
             style={styles.logo}
           />
           <Animatable.Text
